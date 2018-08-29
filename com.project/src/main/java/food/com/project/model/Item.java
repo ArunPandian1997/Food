@@ -7,16 +7,32 @@ import javax.persistence.Id;
 public class Item 
 {
 	@Id
-	int id;
+	long id;
 	String name;
 	
-	Item(String name)
+	Item()
 	{
+		
+	}
+	
+	public Item(long id,String name)
+	{
+		this.id=id;
 		this.name=name;
 	}
 	
 	String getName()
 	{
 		return name;
+	}
+	
+	void setName(String name)
+	{
+		this.name=name;
+	}
+	
+	void setId(long id)
+	{
+		this.id=id;
 	}
 }

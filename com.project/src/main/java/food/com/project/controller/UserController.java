@@ -24,8 +24,14 @@ public class UserController
 	}
 	
 	@RequestMapping(value="/users/{id}/{name}", method=RequestMethod.POST)
-	void addUser(@PathVariable("id") int id,@PathVariable("name") String name)
+	void addUser(@PathVariable("id") long id,@PathVariable("name") String name)
 	{
 		userRepository.save(new Users(id,name));
+	}
+	
+	@RequestMapping(value="/users/{id}", method=RequestMethod.DELETE)
+	void deleteUser(@PathVariable("id") long id)
+	{
+		userRepository.deleteById(id);
 	}
 }
