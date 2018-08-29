@@ -7,7 +7,7 @@ import javax.persistence.Id;
 public class Users
 {
 	@Id
-	int id;
+	long id;
 	String name;
 	
 	Users()
@@ -15,7 +15,7 @@ public class Users
 		
 	}
 	
-	public Users(int id,String name)
+	public Users(long id,String name)
 	{
 		this.id=id;
 		this.name=name;
@@ -29,12 +29,10 @@ public class Users
 	void setName(String name)
 	{
 		this.name=name;
-		System.out.println(name);
 	}
 	
-	void setId(int id)
+	void setId(long id)
 	{
 		this.id=id;
-		System.out.println(id);
 	}
 }
