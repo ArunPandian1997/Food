@@ -7,17 +7,22 @@ import javax.persistence.Id;
 public class SuperUser 
 {
 	@Id
-	int id;
+	long id;
 	String name,password;
 	
-	public SuperUser(int id, String name, String password)
+	public SuperUser()
+	{
+		
+	}
+	
+	public SuperUser(long id, String name, String password)
 	{
 		this.id=id;
 		this.name=name;
 		this.password=password;
 	}
 
-	public void setId(int id) 
+	public void setId(long id) 
 	{
 		this.id = id;
 	}

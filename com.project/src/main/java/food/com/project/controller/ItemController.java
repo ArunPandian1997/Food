@@ -1,5 +1,6 @@
 package food.com.project.controller;
 
+import java.util.Collection;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +19,7 @@ public class ItemController
 	ItemRepository itemRepository;
 	
 	@RequestMapping(value="/item", method=RequestMethod.GET)
-	List<Item> getUsers()
+	Collection<Item> getUsers()
 	{
 		return itemRepository.findAll();
 	}
@@ -32,6 +33,6 @@ public class ItemController
 	@RequestMapping(value="/item/{id}", method=RequestMethod.DELETE)
 	void deleteItem(@PathVariable("id") long id)
 	{
-		itemRepository.deleteById((long) id);
+		itemRepository.deleteById(id);
 	}
 }

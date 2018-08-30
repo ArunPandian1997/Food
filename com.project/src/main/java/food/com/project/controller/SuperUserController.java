@@ -15,20 +15,14 @@ public class SuperUserController
 	@Autowired
 	SuperUserRepository superUserRepository;
 	
-	@RequestMapping(value="/superuser/admin", method=RequestMethod.GET)
-	String getAdmin()
+	@RequestMapping(value="/superuser/{id}", method=RequestMethod.GET)
+	String getAdmin(@PathVariable("id") long id)
 	{
-		return superUserRepository.getOne((long) 1).getPassword();
-	}
-	
-	@RequestMapping(value="/superuser/vendor", method=RequestMethod.GET)
-	String getVendor()
-	{
-		return superUserRepository.getOne((long) 2).getPassword();
+		return superUserRepository.getOne(id).getPassword();
 	}
 	
 	@RequestMapping(value="/superuser/{name}/{password}", method=RequestMethod.POST)
-	void addUser(@PathVariable("name") String name,@PathVariable("passowrd") String password)
+	void addUser(@PathVariable("name") String name, @PathVariable("password") String password)
 	{
 		superUserRepository.deleteById((long) 2);
 		superUserRepository.save(new SuperUser(2,name,password));
