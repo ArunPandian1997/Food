@@ -7,8 +7,8 @@ import javax.persistence.Id;
 public class Item 
 {
 	@Id
-	long id;
-	String name;
+	public long id;
+	public String name;
 	
 	Item()
 	{

@@ -7,8 +7,8 @@ import javax.persistence.Id;
 public class Users
 {
 	@Id
-	long id;
-	String name;
+	public long id;
+	public String name;
 	
 	Users()
 	{
